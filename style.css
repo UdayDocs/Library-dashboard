@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+    --dark-text: rgb(65, 69, 81);
+    --light-text: rgb(130, 132, 144);
+    --hover-link: rgb(45, 109, 212);
+    --background-col: rgb(246 247 251);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: var(--background-col);
+    color: var(--light-text);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+}
+
+
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+p,
+p a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--light-text);
+    line-height: 1.4;
+}
+
+
+p {
+    margin-bottom: 10px;
+}
+
+::placeholder {
+    color: var(--light-text);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    opacity: 0;
+}
+
+
+input,
+input:focus,
+input:focus:not(:placeholder-shown) {
+    background-color: rgb(233, 235, 243);
+    border-radius: 30px;
+    border: none;
+    color: var(--dark-text);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    outline: none;
+    padding: 10px 20px;
+    transition: width 0.3s;
+    width: 250px;
+}
+
+input:not(:focus):placeholder-shown {
+    background-image: url(https://www.svgrepo.com/show/508317/search.svg);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+}
+
+
+
+.page {
+    display: grid;
+    gap: 20px;
+    /* max-content = grid to make the first row as tall as its content requires 100vh means 100% of the view to browser  */
+    grid-template: max-content calc(100vh) / max-content minmax(600px, 1fr);
+    padding-right: 20px;
+}
+
+#alerts {
+    background-image: url(https://www.svgrepo.com/show/269007/notification-bell.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35px 30px;
+    height: 50px;
+    width: 50px;
+}
+
+.nav {
+    /* * Start at the beginning of the first row. * Start at the beginning of the second column. * End at the end of the first row. * End at the end of the fourth column.
+    * 2 & 3 columns leave :blank */
+    grid-area: 1 / 2 / 2 / 4;
+    padding-top: 20px;
+}
+
+
+.nav-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.075);
+    display: grid;
+    /* The first max-content likely refers to the height of the nav-links element. The second max-content likely refers to the height of the nav-others element. */
+    grid-template: max-content / 1fr max-content;
+    /* Sets the padding for top, right, bottom, and left, respectively */
+    padding: 15px 20px 15px 30px;
+    gap: 20px;
+    /* hides any content that extends beyond the boundaries of the element. */
+    overflow: hidden;
+}
+
+
+.nav-links {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+
+.nav-links li {
+    display: inline;
+    list-style-type: none;
+}
+
+.nav-links a,
+.nav-links a:hover {
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--hover-link);
+}
+
+.nav-others {
+    align-items: center;
+    /* display-flex can be used to arrange elements horizontally */
+    display: flex;
+    gap: 20px;
+}
+
+.profile-pic {
+    background-color: var(--dark-text);
+    background-image: url(https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120% 120%;
+    border-radius: 50%;
+    border: 1px solid var(--light-text);
+    height: 40px;
+    width: 40px;
+}
+
+
+/* Side-bar  */
+
+.side-nav {
+    background-color: rgb(26, 26, 33);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.075);
+    display: grid;
+    grid-area: 1 / 1 / 4 / 2;
+    grid-auto-rows: max-content;
+    grid-template: max-content / max-content;
+    padding: 30px;
+    row-gap: 25px;
+    transition: width 0.3s ease;
+    width: 250px;
+    /* Full width  /* Align icon and text in a row */
+    gap: 10px; /* Space between icon and text */
+    padding: 20px 15px; /* Spacing for links */
+    text-decoration: none;
+    color: var(--light-text);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.side-nav a {
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+.side-nav_toggle {
+    width: 70px;
+    /* Collapsed width */
+}
+
+
+
+/* Dashboard  */
+.side-dash {
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    /* text-align:justify; */
+    cursor: pointer;
+    text-decoration: none;
+    padding: 20px 20px;
+
+}
+
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    transition: margin 0.3s ease;
+
+    /* Smooth transition for margin */
+}
+
+
+.nav-text {
+    opacity: 1;
+    /* Fully visible by default */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: visible;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    color: var(--light-text);
+    padding-left: 30px;
+    text-decoration: none;
+
+}
+
+.nav-icon-dash {
+    width: 39px;
+    height: 39px;
+    transition: margin 0.1s ease;
+}
+
+
+/* Main page */
+
+.content-title {
+    color: var(--dark-text);
+    font-size: 22px;
+    font-weight: 400;
+    /* starting column/ending column = null width of the grid container */
+    grid-column: 1 / -1;
+    
+    margin: 35px 30px 15px 30px;
+}
+
+/* Heart of the project */
+
+.main-content {
+    display: grid;
+    gap: 20px;
+    grid-area: 2 / 2 / 4 / 4;
+    grid-template: max-content / 1fr 300px;
+    margin-bottom: 50px;
+}
+
+/* #projects {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: max-content;
+} */
+
+#news {
+    display: grid;
+    gap: 10px;
+    grid-auto-rows: max-content;
+    grid-template-columns: 1fr;
+}
+
+#announcements,
+#trending {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.075);
+    display: grid;
+    gap: 20px 15px;
+    grid-template-rows: max-content;
+    padding: 30px;
+}
+
+
+#trending {
+    grid-template-columns: max-content 1fr;
+}
+
+#news p:last-child {
+    margin-bottom: 0;
+}
+
+.trending-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    height: 55px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    width: 55px;
+}
+
+
+
+.project-note {
+    background-color: rgb(255, 255, 255);
+    /* border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.075);
+    display: grid;
+    gap: 10px;
+    grid-template-rows: max-content 1fr max-content;
+    padding: 30px;
+    transition: all 0.4s; */
+}
+
+/* .card-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: right;
+    margin-top: 10px;
+}
+
+.card-icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+} */
+
+/* .project-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+    height: 80px;
+    margin-bottom: 20px;
+    overflow: hidden;
+} */
+
+/* .project-note:hover {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s;
+    outline: 2px solid lightblue;
+} */
+
+
+
+
+/* .favourite {
+    background-image: url(https://www.svgrepo.com/show/491942/ui-color-2-favourite-28.svg);
+}
+
+.view {
+    background-image: url(https://www.svgrepo.com/show/484902/comment-balloon-part-3.svg);
+}
+
+.share {
+    background-image: url(https://www.svgrepo.com/show/491916/location-color-bookmark.svg);
+} */
+
+
+
+/* Unimportant code */
+
+
+
+.side-nav_toggle a {
+    justify-content: center;
+    /* Center the icons horizontally */
+    gap: 0;
+    /* Remove gap between icon and text */
+}
+
+.side-nav_toggle .nav-icon {
+    margin-right: 0;
+    /* Remove margin in collapsed state */
+}
+
+.side-nav_toggle .nav-text {
+    opacity: 0;
+    /* Hide text */
+    visibility: hidden;
+    /* Prevent text from being focusable or clickable */
+}
+
+
+
+
+/* #add-book img {
+    width: 80px;
+    padding-left: -50px;
+
+} */
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+} */
+
+/* .header {
+    height: 80px;
+    box-shadow: rgba(192, 15, 15, 0.15) 1.95px 1.95px 2.6px;
+    align-content: center;
+    text-align: center;
+} */
+
+.library-body {
+    padding: 10px;
+
+}
+
+
+.text {
+    text-align: center;
+    padding: 80px;
+}
+
+
+
+.text>h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+.text>.add-book {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #F40009;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 30px;
+    
+}
+
+
+.text>.add-book:hover {
+    background-color: #cc0007;
+}
+
+dialog {
+    position: absolute;
+    padding: 30px;
+    width: 300px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: visible;
+    border: none;
+    font-size: 18px;
+}
+
+dialog>button {
+    padding: 5px;
+    border-radius: 8px;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+dialog img {
+    width: 20px;
+}
+
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+
+form input[type="text"] {
+    font-size: 1em;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    ;
+}
+
+form input[type="checkbox"] {
+    margin: auto;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+    box-shadow: rgb(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+form>button {
+    background-color: #F40009;
+    border: none;
+    border-radius: 20px;
+    font-size: 1em;
+    padding: 10px 0px;
+    color: white;
+    cursor: pointer;
+}
+
+form>button:hover {
+    background-color: #cc0007;
+}
+
+form>div {
+    display: grid;
+}
+
+.book-container {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 400px;
+    gap: 50px;
+}
+
+.book-container>div {
+    background-color: rgb(240, 240, 240);
+    border-radius: 15px;
+    box-shadow: rgb(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.book-container>.add-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.book-container>.add-book:hover {
+    background-color: rgb(197, 197, 197);
+}
+
+.add-book img {
+    width: 80px;
+}
+
+.book {
+    padding: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book button {
+    font-size: 1em;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.checked {
+    background-color: #b2ec5d;
+}
+
+.unchecked {
+    background-color: #ff2400;
+}
+
+.remove-button {
+    background-color: white;
+}
+
+.book .checked:hover {
+    background-color: #9bcc50
+}
+
+.book .unchecked:hover {
+    background-color: #ce1e03;
+}
+
+.book .remove-button:hover {
+    background-color: rgb(223, 222, 222);
+}
+

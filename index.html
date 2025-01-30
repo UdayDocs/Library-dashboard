@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin dashboard</title>
+    <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+</head>
+<body>
+    <div class="page">
+        <div class="nav">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a class="add-book">Add Book</a></li>
+                    <li><a href="">Upload</a></li>
+                    <li><a href="">Share</a></li>
+                </ul>
+                <div class="nav-others">
+                    <input type="text" id="search-bar" placeholder="search" results="5"></input>
+    
+                    <div id="alerts"></div>
+                    <div class="profile-pic"></div>
+                    <div>UDAY</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="side-nav">
+        
+            <a href="#" id="side-dash">
+                    <!-- <div class="dashboard-icon"></div> -->
+                <img src="https://cdn.iconscout.com/icon/free/png-512/free-dashboard-apps-icon-download-in-svg-png-gif-file-formats--abstract-primitive-geometric-icons-pack-miscellaneous-2873665.png?f=webp&w=256" alt="Home Icon" class="nav-icon-dash">
+                <span class="side-dash">Dashboard</span>
+            </a>
+            <a href="#" id="home">
+                    <img src="https://www.svgrepo.com/show/491873/home-selected-state.svg" alt="Home Icon" class="nav-icon">
+                    <span class="nav-text">Home</span>
+            </a>
+            <a href="#" id="profile">
+                    <img src="https://www.svgrepo.com/show/454342/account-customize-man.svg" alt="Profile Icon" class="nav-icon">
+                    <span class="nav-text">Profile</span>
+            </a>
+
+            <a href="#" id="messages">
+                <img src="https://www.svgrepo.com/show/29837/dialogue.svg" class="nav-icon">
+                <span class="nav-text">Messages</span>
+            </a>
+        
+                <a href="#" id="tasks">
+                    <img src="https://www.svgrepo.com/show/189372/clipboard-tasks.svg" class="nav-icon">
+                    <span class="nav-text">Tasks</span>
+                </a>
+
+                <a href="#" id="communities">
+                    <img src="https://www.svgrepo.com/show/122958/group.svg" class="nav-icon">
+                    <span class="nav-text">Communities</span>
+                </a>
+                <a href="#" id="settings">
+                    <img src="https://www.svgrepo.com/show/288387/settings-wrench.svg" class="nav-icon">
+                    <span class="nav-text">Settings</span>
+                </a>
+                <a href="#" id="support">
+                    <img src="https://www.svgrepo.com/show/184917/operator-support.svg" class="nav-icon">
+                    <span class="nav-text">Support</span>
+                </a>
+                <a href="#" id="privacy">
+                    <img src="https://www.svgrepo.com/show/474951/privacy.svg" class="nav-icon">
+                    <span class="nav-text">Privacy</span>
+                </a>
+
+
+
+        </div>
+
+        <div class="main-content">
+            <!-- <div id="projects"> -->
+                
+
+                <div class="library-body">
+                    <div class="content-title">Library</div>
+                        <div class="text">
+                            <h2>No books in the library</h2>
+                            <button class="add-book">Add Book</button>
+                        </div>
+                        <dialog>
+                            <button><img src="https://www.svgrepo.com/show/411358/close.svg" alt=""></button>
+                            <form>
+                                <div>
+                                    <label for="title">Title* </label>
+                                    <input type="text" id="title" name="title" required>
+                                </div>
+                                <div>
+                                    <label for="author">Author*</label>
+                                    <input type="text" id="author" name="author" required>
+                                </div>
+                                <div>
+                                    <label for="pages">No.of Pages*</label>
+                                    <input type="text" id="pages" name="pages" pattern="[0-9]+" required>
+                                </div>
+                                <div>
+                                    <label for="read">Read?</label>
+                                    <input type="checkbox" id="read" name="read">
+                                </div>
+                                <button>Submit</button>
+                            </form>
+                        </dialog>
+                        <div class="book-container">
+                            <div class="add-book"><img src="https://www.svgrepo.com/show/475239/add-to.svg" alt=""></div>
+                        </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+    
+            <div id="news">
+                <div class="content-title">Announcements</div>
+                <div id="announcements">
+                    <div>
+                        <h3>Hacker news</h3>
+                        <p>Uday hacked Facebook,Google,Twitter and apple earned 1 million bounty </p>
+                    </div>
+                    <div>
+                        <h3>Trip to india</h3>
+                        <p> INDIA IS ONE OF the world’s most fascinating travel destinations. A billion people, an ancient and unbroken culture, a
+                        kaleidoscope of sights, sounds, smells … and one of the fastest changing societies on earth.</p>
+                    </div>
+                </div>
+
+                <div class="content-title">Trending</div>
+                <div id="trending">
+                    <div class="trending-image" style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
+                    <div>
+                        <h3>@Aria</h3>
+                        <p>I got 2000$ bounty</p>
+                    </div>
+                    <div class="trending-image"
+                        style="background-image: url(https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=2134&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+                    </div>
+                    <div>
+                        <h3>@Ben</h3>
+                        <p>I got 10,000$ bounty</p>
+                    </div>
+                    <div class="trending-image"
+                        style="background-image: url(https://img.icons8.com/?size=100&id=23309&format=png&color=000000)">
+                    </div>
+
+                    <div>
+                        <h3>@John</h3>
+                        <p>I got 1000$ bounty</p>
+                    </div>
+                    <div class="trending-image"
+                        style="background-image: url(https://img.icons8.com/?size=100&id=xXaeGQn5sAFy&format=png&color=000000)">
+                    </div>
+
+                    <div>
+                        <h3>@User</h3>
+                        <p>I got 500$ bounty</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src='script.js' defer></script>
+</body>
+</html>

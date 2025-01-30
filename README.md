@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-[Link to your live demo here](https://udaydocs.github.io/Library-dashboard/)  
+[Live demo here](https://udaydocs.github.io/Library-dashboard/)  
 ---
 
 ## ✨Features
